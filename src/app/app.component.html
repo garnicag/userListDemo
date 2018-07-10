@@ -1,3 +1,7 @@
 <h1>
-  {{title}}
+  Users List
 </h1>
+
+<span class="wrapper" *ngFor="let contact of details">
+  <app-result [name]="contact.name" [details]="contact"></app-result>
+</span>

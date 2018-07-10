@@ -1,8 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #FCFEFB;
+  background: #457B9D;
+  background: #fafafa;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Quicksand';
+  font-weight: 200;
 }

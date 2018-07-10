@@ -1,0 +1,36 @@
+<div class="result-card" *ngIf="!destroyComponent">
+  <div class="notification" *ngIf="notification">
+    <i class="fa fa-user-circle fa-3x"></i><br>Contact saved
+  </div>
+
+  <div class="notification" *ngIf="notificationDel">
+    <i class="fa fa-trash fa-3x"></i><br>User removed
+  </div>
+  <div *ngIf="!this.editMode">
+    <h2>{{this.details.name}}</h2>
+    <section><div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>{{this.details.email}}</section>
+    <section><div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>{{this.details.phone}}</section>
+    <section><div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>{{this.details.website}}</section>
+    <section><div class="icon"><i class="fa fa-building" aria-hidden="true"></i></div>{{this.details.company.name}}</section>
+
+    <button class="edit" (click)="toggleEdit()"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</button>
+  </div>
+
+  <div *ngIf="this.editMode" class="edit-mode">
+    <form [formGroup]="updateForm" (submit)="saveChanges(updateForm)">
+    <div class="name-wrapper">
+      <input class="name-edit" type="text" name="usrName" [value]="this.details.name" formControlName="name">
+    </div>
+      <section><div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div><input type="text" name="email" [value]="this.details.email" formControlName="email"></section>
+      <section><div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div><input type="text" name="phone" [value]="this.details.phone" formControlName="phone"></section>
+      <section><div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div><input type="text" name="website" [value]="this.details.website" formControlName="website"></section>
+      <section><div class="icon"><i class="fa fa-building" aria-hidden="true"></i></div><input type="text" name="company" [value]="this.details.company.name" formControlName="company"></section>
+      <div class="actions">
+        <button class="save" type="submit"><i class="fa fa-check" aria-hidden="true"></i>Save</button>
+        <button class="cancel" type="button" (click)="toggleEdit()"><i class="fa fa-times" aria-hidden="true"></i>Cancel</button>
+        <button class="delete" type="button" (click)="deleteUser()"><i class="fa fa-trash" aria-hidden="true"></i></button>
+      </div>
+    </form>
+  </div>
+
+</div>
