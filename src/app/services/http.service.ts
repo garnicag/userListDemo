@@ -40,7 +40,7 @@ export class HttpService {
       'phone': newValues.phone,
       'website': newValues.website,
       'company': {
-        'name': newValues.company
+        'name': newValues.company.name
       }
     }).subscribe(
       res => {

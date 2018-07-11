@@ -47,7 +47,9 @@ export class ResultComponent {
       'email': updateForm.value.email !== null ? updateForm.value.email : this.details.email,
       'phone': updateForm.value.phone !== null ? updateForm.value.phone : this.details.phone,
       'website': updateForm.value.website !== null ? updateForm.value.website : this.details.website,
-      'company': updateForm.value.company !== null ? updateForm.value.company : this.details.company
+      'company': {
+        'name': updateForm.value.company !== null ? updateForm.value.company : this.details.company.name
+      }
     };
 
     this.details = newValues;
